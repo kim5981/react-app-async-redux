@@ -1,5 +1,8 @@
+import { connect } from "react-redux";
 import React, { useState } from 'react';
 import './App.css';
+
+import Form from "./SearchForm";
 import * as actions from "../../../src/state/actions.js";
 
 const initialFormVals = {
@@ -34,25 +37,11 @@ function App(props) {
       </nav>
       <div>
         <h1>Makeup Title</h1>
-        <form>
-          <input
-            type="search"
-            name="search"
-            onChange={ handleChange }
-            value={ form.search }
-          />
-          <button id="homeSearch" onClick={ submitSearch }> Search </button>
-        </form>
+        <Form/>
       </div>
     </div>
     </div>
   );
-}
-
-const mapStateToProps = state => {
-  return {
-    form: state.form
-  }
 }
 
 export default App;
